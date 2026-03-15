@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FloraVita — Toshkentning eng nozik gul do'koni. Yangi gullar, tez yetkazib berish, individual dizayn.">
+  <title>FloraVita — Gul Do'koni</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    =============================================
+    FloraVita CSS Architecture
+    css/variables.css  — design tokens, resets, keyframes, shared components
+    css/nav.css        — cursor + navigation
+    css/hero.css       — hero section
+    css/sections.css   — all other sections
+    =============================================
+  -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       NAV  (sections/nav.html)
+       ========================================== -->
+  <nav class="fv-nav" id="fv-nav">
+    <a href="#home" class="fv-logo">Flora<em>Vita</em></a>
+    <div class="fv-nav-links">
+      <a href="#collection" class="fv-nav-link">Kolleksiya</a>
+      <a href="#process"    class="fv-nav-link">Jarayon</a>
+      <a href="#contact"    class="fv-nav-link">Aloqa</a>
+      <a href="#contact" class="btn-primary"><span>Buyurtma</span></a>
+    </div>
+    <button class="fv-nav-toggle" id="fv-nav-toggle" aria-label="Menyu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="fv-nav-mobile" id="fv-nav-mobile">
+    <a href="#collection" class="fv-nav-link">Kolleksiya</a>
+    <a href="#process"    class="fv-nav-link">Jarayon</a>
+    <a href="#contact"    class="fv-nav-link">Aloqa</a>
+    <a href="#contact" class="btn-primary"><span>Buyurtma</span></a>
+  </div>
+
+  <!-- ==========================================
+       HERO  (sections/hero.html)
+       ========================================== -->
+  <section class="fv-hero" id="home">
+    <div class="fv-hero__left">
+      <p class="fv-hero__eyebrow">Toshkentning eng nozik gul do'koni</p>
+      <h1 class="fv-hero__title">Tabiat<em>go'zalligi</em></h1>
+      <p class="fv-hero__desc">
+        Har bir guldasta — bu sizning his-tuyg'ularingizning ifodasi.
+        Biz eng yangi, eng chiroyli gullarni sizning sevgiliyingiz uchun muhabbat bilan to'playmiz.
+      </p>
+      <div class="fv-hero__actions">
+        <a href="#collection" class="btn-primary"><span>Katalogni ko'rish</span></a>
+        <a href="#process" class="btn-arrow">Qanday ishlaydi</a>
+      </div>
+      <div class="fv-hero__stats">
+        <div class="fv-hero__stat">
+          <div class="fv-hero__stat-num" data-target="500" data-suffix="+">500+</div>
+          <div class="fv-hero__stat-label">Xursand mijoz</div>
+        </div>
+        <div class="fv-hero__stat">
+          <div class="fv-hero__stat-num" data-target="120" data-suffix="+">120+</div>
+          <div class="fv-hero__stat-label">Gul turi</div>
+        </div>
+        <div class="fv-hero__stat">
+          <div class="fv-hero__stat-num" data-target="2" data-suffix="h">2h</div>
+          <div class="fv-hero__stat-label">Yetkazib berish</div>
+        </div>
+      </div>
+      <div class="fv-hero__scroll">
+        <span class="fv-hero__scroll-label">Pastga</span>
+        <div class="fv-hero__scroll-bar"></div>
+      </div>
+    </div>
+
+    <div class="fv-hero__right">
+      <div class="fv-hero__canvas">
+        <div class="fv-hero__glow"></div>
+        <div class="fv-hero__flower-wrap">
+          <svg class="fv-hero__flower" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="hpg1" cx="50%" cy="30%" r="70%">
+                <stop offset="0%"   stop-color="#faeae0"/>
+                <stop offset="100%" stop-color="#c87d6e"/>
+              </radialGradient>
+              <radialGradient id="hpg2" cx="50%" cy="30%" r="70%">
+                <stop offset="0%"   stop-color="#f2d5c4"/>
+                <stop offset="100%" stop-color="#9b4f42"/>
+              </radialGradient>
+              <radialGradient id="hcg" cx="50%" cy="40%" r="70%">
+                <stop offset="0%"   stop-color="#d4927e"/>
+                <stop offset="60%"  stop-color="#9b4f42"/>
+                <stop offset="100%" stop-color="#7a3830"/>
+              </radialGradient>
+              <filter id="hps" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="rgba(155,79,66,0.22)"/>
+              </filter>
+            </defs>
+            <g transform="translate(260,260)" filter="url(#hps)">
+              <!-- Outer 8 petals -->
+              <g opacity="0.72">
+                <ellipse rx="38" ry="120" fill="url(#hpg1)" transform="rotate(0)   translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg2)" transform="rotate(45)  translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg1)" transform="rotate(90)  translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg2)" transform="rotate(135) translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg1)" transform="rotate(180) translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg2)" transform="rotate(225) translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg1)" transform="rotate(270) translate(0,-78)"/>
+                <ellipse rx="38" ry="120" fill="url(#hpg2)" transform="rotate(315) translate(0,-78)"/>
+              </g>
+              <!-- Middle 8 petals -->
+              <g opacity="0.86">
+                <ellipse rx="26" ry="88" fill="url(#hpg2)" transform="rotate(22.5)  translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg1)" transform="rotate(67.5)  translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg2)" transform="rotate(112.5) translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg1)" transform="rotate(157.5) translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg2)" transform="rotate(202.5) translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg1)" transform="rotate(247.5) translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg2)" transform="rotate(292.5) translate(0,-56)"/>
+                <ellipse rx="26" ry="88" fill="url(#hpg1)" transform="rotate(337.5) translate(0,-56)"/>
+              </g>
+              <!-- Inner 6 petals -->
+              <g opacity="0.92">
+                <ellipse rx="18" ry="58" fill="url(#hpg1)" transform="rotate(0)   translate(0,-37)"/>
+                <ellipse rx="18" ry="58" fill="url(#hpg2)" transform="rotate(60)  translate(0,-37)"/>
+                <ellipse rx="18" ry="58" fill="url(#hpg1)" transform="rotate(120) translate(0,-37)"/>
+                <ellipse rx="18" ry="58" fill="url(#hpg2)" transform="rotate(180) translate(0,-37)"/>
+                <ellipse rx="18" ry="58" fill="url(#hpg1)" transform="rotate(240) translate(0,-37)"/>
+                <ellipse rx="18" ry="58" fill="url(#hpg2)" transform="rotate(300) translate(0,-37)"/>
+              </g>
+              <!-- Center -->
+              <circle r="64" fill="url(#hcg)"/>
+              <circle r="48" fill="#b85e4e" opacity="0.65"/>
+              <circle r="33" fill="#c87d6e" class="fv-hero-center-pulse"/>
+              <circle r="18" fill="#e8b4a0" class="fv-hero-center-pulse" opacity="0.9"/>
+              <circle r="8"  fill="#faeae0" opacity="0.95"/>
+              <circle r="3"  cx="13"  cy="-9"  fill="#9b4f42" opacity="0.4"/>
+              <circle r="2"  cx="-11" cy="11"  fill="#9b4f42" opacity="0.35"/>
+              <circle r="2.5" cx="7"  cy="15"  fill="#9b4f42" opacity="0.3"/>
+              <circle r="2"  cx="-7"  cy="-15" fill="#9b4f42" opacity="0.35"/>
+            </g>
+            <!-- Leaves -->
+            <g opacity="0.75">
+              <ellipse cx="128" cy="400" rx="18" ry="58" fill="#7d9b7a" transform="rotate(-35 128 400)"/>
+              <ellipse cx="392" cy="400" rx="18" ry="58" fill="#4a6647" transform="rotate(35 392 400)"/>
+              <ellipse cx="94"  cy="260" rx="14" ry="46" fill="#7d9b7a" transform="rotate(-72 94 260)"/>
+              <ellipse cx="426" cy="260" rx="14" ry="46" fill="#4a6647" transform="rotate(72 426 260)"/>
+            </g>
+            <line x1="260" y1="380" x2="260" y2="520" stroke="#4a6647" stroke-width="4" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="fv-hero__petals"></div>
+      </div>
+      <div class="fv-hero__badge">
+        <div class="fv-hero__badge-ring"></div>
+        <div class="fv-hero__badge-ring--dashed"></div>
+        <div class="fv-hero__badge-body">
+          <span class="fv-hero__badge-num">5★</span>
+          <span class="fv-hero__badge-text">Sifat kafolati</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MARQUEE + FEATURES  (sections/marquee-features.html)
+       ========================================== -->
+  <div class="fv-marquee">
+    <div class="fv-marquee__track">
+      <span class="fv-marquee__item">Atirgul</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Lola</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Rayhon</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Boychechak</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Magnoliya</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Lavanda</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Mimoza</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Pion</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Gerbera</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Frezia</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Atirgul</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Lola</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Rayhon</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Boychechak</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Magnoliya</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Lavanda</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Mimoza</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Pion</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Gerbera</span><span class="fv-marquee__sep">✦</span>
+      <span class="fv-marquee__item">Frezia</span><span class="fv-marquee__sep">✦</span>
+    </div>
+  </div>
+
+  <section class="fv-features">
+    <div class="fv-feature reveal" data-delay="0">
+      <span class="fv-feature__icon">🌹</span>
+      <h3 class="fv-feature__title">Yangi gul kafolati</h3>
+      <p class="fv-feature__text">Har kuni erta tongda yetkazib beriladigan eng yangi va chiroyli gullar. Sifat va yangilik — bizning asosiy tamoyilimiz.</p>
+    </div>
+    <div class="fv-feature reveal" data-delay="0.15">
+      <span class="fv-feature__icon">🎨</span>
+      <h3 class="fv-feature__title">Individual dizayn</h3>
+      <p class="fv-feature__text">Sizning orzuyingizga mos individual guldasta kompozitsiyalari. Har bir buyurtma — alohida san'at asari.</p>
+    </div>
+    <div class="fv-feature reveal" data-delay="0.3">
+      <span class="fv-feature__icon">🚀</span>
+      <h3 class="fv-feature__title">Tez yetkazib berish</h3>
+      <p class="fv-feature__text">Toshkent bo'ylab 2 soat ichida yetkazib berish. Sovg'angiz har doim o'z vaqtida yetib boradi.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       COLLECTION + GALLERY  (sections/collection.html)
+       ========================================== -->
+  <section class="fv-collection" id="collection">
+    <div class="section-header">
+      <span class="section-label reveal">✦ Bizning mahsulotlar</span>
+      <h2 class="section-title reveal" data-delay="0.1">Guldastalar<br><em>kolleksiyasi</em></h2>
+    </div>
+    <div class="fv-collection__grid">
+
+      <div class="fv-product reveal" data-delay="0">
+        <div class="fv-product__visual">
+          <div class="fv-product__bg fv-flower-bg--1"></div>
+          <div class="fv-product__art">
+            <svg viewBox="0 0 300 380" width="78%" height="78%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><radialGradient id="cpg1" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="rgba(255,255,255,0.7)"/><stop offset="100%" stop-color="rgba(255,255,255,0.15)"/></radialGradient></defs>
+              <g transform="translate(150,155)">
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(0)   translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(45)  translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(90)  translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(135) translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(180) translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(225) translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(270) translate(0,-62)"/>
+                <ellipse rx="30" ry="96" fill="url(#cpg1)" transform="rotate(315) translate(0,-62)"/>
+                <circle r="50" fill="rgba(155,79,66,0.6)"/>
+                <circle r="32" fill="rgba(232,180,160,0.8)"/>
+                <circle r="14" fill="rgba(250,234,224,0.95)"/>
+              </g>
+              <line x1="150" y1="250" x2="150" y2="380" stroke="rgba(74,102,71,0.7)" stroke-width="5"/>
+              <ellipse cx="118" cy="316" rx="20" ry="42" fill="rgba(125,155,122,0.65)" transform="rotate(-38 118 316)"/>
+              <ellipse cx="184" cy="334" rx="16" ry="34" fill="rgba(74,102,71,0.6)"   transform="rotate(32 184 334)"/>
+            </svg>
+          </div>
+          <div class="fv-product__overlay"></div>
+          <div class="fv-product__info">
+            <div class="fv-product__name">Qizil Atirgul Guldastalari</div>
+            <div class="fv-product__price">180 000 so'm dan</div>
+            <a href="#contact" class="fv-product__btn">Buyurtma berish</a>
+          </div>
+          <div class="fv-product__tag">Bestseller</div>
+        </div>
+      </div>
+
+      <div class="fv-product reveal" data-delay="0.1">
+        <div class="fv-product__visual">
+          <div class="fv-product__bg fv-flower-bg--2"></div>
+          <div class="fv-product__art">
+            <svg viewBox="0 0 200 200" width="68%" height="68%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(100,100)">
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(0)   translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(51)  translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(102) translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(153) translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(204) translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(255) translate(0,-38)"/>
+                <ellipse rx="20" ry="66" fill="rgba(255,255,255,0.5)" transform="rotate(306) translate(0,-38)"/>
+                <circle r="32" fill="rgba(74,102,71,0.65)"/>
+                <circle r="16" fill="rgba(200,216,196,0.9)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="fv-product__overlay"></div>
+          <div class="fv-product__info">
+            <div class="fv-product__name">Yashil Kompozitsiya</div>
+            <div class="fv-product__price">120 000 so'm dan</div>
+            <a href="#contact" class="fv-product__btn">Buyurtma berish</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="fv-product reveal" data-delay="0.2">
+        <div class="fv-product__visual">
+          <div class="fv-product__bg fv-flower-bg--3"></div>
+          <div class="fv-product__art">
+            <svg viewBox="0 0 200 200" width="68%" height="68%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(100,100)">
+                <ellipse rx="22" ry="72" fill="rgba(255,255,255,0.45)" transform="rotate(0)   translate(0,-42)"/>
+                <ellipse rx="22" ry="72" fill="rgba(255,255,255,0.45)" transform="rotate(72)  translate(0,-42)"/>
+                <ellipse rx="22" ry="72" fill="rgba(255,255,255,0.45)" transform="rotate(144) translate(0,-42)"/>
+                <ellipse rx="22" ry="72" fill="rgba(255,255,255,0.45)" transform="rotate(216) translate(0,-42)"/>
+                <ellipse rx="22" ry="72" fill="rgba(255,255,255,0.45)" transform="rotate(288) translate(0,-42)"/>
+                <circle r="36" fill="rgba(200,168,144,0.75)"/>
+                <circle r="18" fill="rgba(255,255,255,0.75)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="fv-product__overlay"></div>
+          <div class="fv-product__info">
+            <div class="fv-product__name">Pion Guldastasi</div>
+            <div class="fv-product__price">200 000 so'm dan</div>
+            <a href="#contact" class="fv-product__btn">Buyurtma berish</a>
+          </div>
+          <div class="fv-product__tag fv-product__tag--gold">Yangi</div>
+        </div>
+      </div>
+
+      <div class="fv-product reveal" data-delay="0.3">
+        <div class="fv-product__visual">
+          <div class="fv-product__bg fv-flower-bg--4"></div>
+          <div class="fv-product__art">
+            <svg viewBox="0 0 200 200" width="68%" height="68%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(100,100)">
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(30)  translate(0,-36)"/>
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(90)  translate(0,-36)"/>
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(150) translate(0,-36)"/>
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(210) translate(0,-36)"/>
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(270) translate(0,-36)"/>
+                <ellipse rx="18" ry="62" fill="rgba(255,255,255,0.45)" transform="rotate(330) translate(0,-36)"/>
+                <circle r="30" fill="rgba(232,168,152,0.8)"/>
+                <circle r="14" fill="rgba(255,255,255,0.7)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="fv-product__overlay"></div>
+          <div class="fv-product__info">
+            <div class="fv-product__name">Pushti Lolalar</div>
+            <div class="fv-product__price">95 000 so'm dan</div>
+            <a href="#contact" class="fv-product__btn">Buyurtma berish</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="fv-product reveal" data-delay="0.4">
+        <div class="fv-product__visual">
+          <div class="fv-product__bg fv-flower-bg--5"></div>
+          <div class="fv-product__art">
+            <svg viewBox="0 0 200 200" width="68%" height="68%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(100,100)">
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(0)   translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(45)  translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(90)  translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(135) translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(180) translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(225) translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(270) translate(0,-33)"/>
+                <ellipse rx="16" ry="56" fill="rgba(255,255,255,0.5)" transform="rotate(315) translate(0,-33)"/>
+                <circle r="28" fill="rgba(192,168,216,0.8)"/>
+                <circle r="13" fill="rgba(255,255,255,0.8)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="fv-product__overlay"></div>
+          <div class="fv-product__info">
+            <div class="fv-product__name">Binafsha Lavanda</div>
+            <div class="fv-product__price">145 000 so'm dan</div>
+            <a href="#contact" class="fv-product__btn">Buyurtma berish</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gallery strip -->
+  <section class="fv-gallery">
+    <div class="fv-gallery__inner">
+      <div class="fv-gallery__item"><div class="fv-product__bg fv-flower-bg--1" style="position:absolute;inset:0"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">To'y guldastasi</div><div class="fv-gallery__caption-price">350 000 so'm dan</div></div></div>
+      <div class="fv-gallery__item"><div class="fv-product__bg fv-flower-bg--2" style="position:absolute;inset:0"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">Ofis dekoratsiyasi</div><div class="fv-gallery__caption-price">500 000 so'm dan</div></div></div>
+      <div class="fv-gallery__item"><div class="fv-product__bg fv-flower-bg--3" style="position:absolute;inset:0"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">Tug'ilgan kun</div><div class="fv-gallery__caption-price">220 000 so'm dan</div></div></div>
+      <div class="fv-gallery__item"><div class="fv-product__bg fv-flower-bg--4" style="position:absolute;inset:0"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">Sevgilisi uchun</div><div class="fv-gallery__caption-price">160 000 so'm dan</div></div></div>
+      <div class="fv-gallery__item"><div class="fv-product__bg fv-flower-bg--5" style="position:absolute;inset:0"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">Klassik guldasta</div><div class="fv-gallery__caption-price">130 000 so'm dan</div></div></div>
+      <div class="fv-gallery__item"><div class="fv-product__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#f8e0d0,#e4b8a0,#c89080)"></div><div class="fv-product__overlay" style="opacity:.2"></div><div class="fv-gallery__caption"><div class="fv-gallery__caption-title">Premium kompozitsiya</div><div class="fv-gallery__caption-price">280 000 so'm dan</div></div></div>
+    </div>
+    <div class="fv-gallery__dots">
+      <div class="fv-gallery__dot active"></div>
+      <div class="fv-gallery__dot"></div>
+      <div class="fv-gallery__dot"></div>
+      <div class="fv-gallery__dot"></div>
+      <div class="fv-gallery__dot"></div>
+      <div class="fv-gallery__dot"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS  (sections/sections-rest.html)
+       ========================================== -->
+  <section class="fv-testimonials">
+    <div class="fv-testimonials__deco">"</div>
+    <div class="fv-testimonials__slider">
+      <div class="fv-testimonial">
+        <div class="fv-testimonial__stars">★★★★★</div>
+        <p class="fv-testimonial__text">"FloraVita — bu shunchaki gul do'koni emas. Bu — hissiyotlar va go'zallikning uyg'unligi. Har bir guldasta qalbdan yasalgan, har bir tafsilot puxta o'ylangan."</p>
+        <div class="fv-testimonial__author"><div class="fv-testimonial__avatar">N</div><div class="fv-testimonial__meta"><div class="fv-testimonial__name">Nilufar Rashidova</div><div class="fv-testimonial__role">Doimiy mijoz, Toshkent</div></div></div>
+      </div>
+      <div class="fv-testimonial">
+        <div class="fv-testimonial__stars">★★★★★</div>
+        <p class="fv-testimonial__text">"To'yimiz uchun bezatilgan guldastalar hayratlanarli edi. Mehmonlar ham, biz ham juda xursand bo'ldik. Kasbiy yondashuv va sifat haqiqatan ham boshqa darajada."</p>
+        <div class="fv-testimonial__author"><div class="fv-testimonial__avatar">D</div><div class="fv-testimonial__meta"><div class="fv-testimonial__name">Dilnoza Yusupova</div><div class="fv-testimonial__role">Kelin, Toshkent</div></div></div>
+      </div>
+      <div class="fv-testimonial">
+        <div class="fv-testimonial__stars">★★★★★</div>
+        <p class="fv-testimonial__text">"Ofisimiz uchun har hafta buyurtma beramiz. Har doim vaqtida, har doim yangi, har doim chiroyli. FloraVita bizning ishonchli hamkorimizga aylandi."</p>
+        <div class="fv-testimonial__author"><div class="fv-testimonial__avatar">A</div><div class="fv-testimonial__meta"><div class="fv-testimonial__name">Aziz Karimov</div><div class="fv-testimonial__role">Biznes egasi, Toshkent</div></div></div>
+      </div>
+      <div class="fv-testimonial">
+        <div class="fv-testimonial__stars">★★★★★</div>
+        <p class="fv-testimonial__text">"Onam uchun surpriz guldasta buyurtma berdim. Yetkazib berish vaqtida bo'ldi, paketlash ham juda chiroyli edi. Onam ko'z yoshlari bilan xursand bo'ldi!"</p>
+        <div class="fv-testimonial__author"><div class="fv-testimonial__avatar">Z</div><div class="fv-testimonial__meta"><div class="fv-testimonial__name">Zulfiya Mirzayeva</div><div class="fv-testimonial__role">Mijoz, Chilonzor</div></div></div>
+      </div>
+    </div>
+    <div class="fv-testimonials__controls">
+      <button class="fv-testimonials__btn" id="fv-test-prev" aria-label="Oldingi">‹</button>
+      <div class="fv-testimonials__progress">
+        <div class="fv-testimonials__pip active"></div>
+        <div class="fv-testimonials__pip"></div>
+        <div class="fv-testimonials__pip"></div>
+        <div class="fv-testimonials__pip"></div>
+      </div>
+      <button class="fv-testimonials__btn" id="fv-test-next" aria-label="Keyingi">›</button>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PROCESS  (sections/sections-rest.html)
+       ========================================== -->
+  <section class="fv-process" id="process">
+    <div class="section-header">
+      <span class="section-label reveal">✦ Qanday ishlaydi</span>
+      <h2 class="section-title reveal" data-delay="0.1">To'rtta<br><em>oddiy qadam</em></h2>
+    </div>
+    <div class="fv-process__grid">
+      <div class="fv-step reveal-left" data-delay="0">
+        <div class="fv-step__num-wrap"><span class="fv-step__num">01</span></div>
+        <div class="fv-step__big-num">01</div>
+        <h3 class="fv-step__title">Tanlang</h3>
+        <p class="fv-step__text">Katalogimizdan eng chiroyli guldastani tanlang yoki shaxsiy dizayn buyuring.</p>
+      </div>
+      <div class="fv-step reveal-left" data-delay="0.14">
+        <div class="fv-step__num-wrap"><span class="fv-step__num">02</span></div>
+        <div class="fv-step__big-num">02</div>
+        <h3 class="fv-step__title">Buyurtma bering</h3>
+        <p class="fv-step__text">Sayt orqali yoki telefon orqali buyurtmangizni rasmiylashtiring. Tez va qulay.</p>
+      </div>
+      <div class="fv-step reveal-left" data-delay="0.28">
+        <div class="fv-step__num-wrap"><span class="fv-step__num">03</span></div>
+        <div class="fv-step__big-num">03</div>
+        <h3 class="fv-step__title">Tayyorlanadi</h3>
+        <p class="fv-step__text">Ustalarımız sizning guldastangizni eng yangi gullardan puxta va sevgi bilan tayyorlaydi.</p>
+      </div>
+      <div class="fv-step reveal-left" data-delay="0.42">
+        <div class="fv-step__num-wrap"><span class="fv-step__num">04</span></div>
+        <div class="fv-step__big-num">04</div>
+        <h3 class="fv-step__title">Yetkaziladi</h3>
+        <p class="fv-step__text">2 soat ichida Toshkentning har qanday manziliga yetkazib beramiz. Har doim o'z vaqtida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CTA  (sections/sections-rest.html)
+       ========================================== -->
+  <section class="fv-cta">
+    <div class="fv-cta__inner">
+      <div class="fv-cta__title reveal-left">Birinchi<em>guldastangiz</em></div>
+      <div class="fv-cta__right reveal-right">
+        <p class="fv-cta__desc">Sevganlaringiz uchun ajoyib sovg'a tayyorlashga tayyor bo'lsangiz, bugun buyurtma bering va <strong>15% chegirma</strong> oling! Birinchi buyurtmangizga alohida chegirma.</p>
+        <a href="tel:+998901234567" class="btn-light">+998 90 123-45-67</a>
+        <div class="fv-cta__guarantee">
+          <span class="fv-cta__guarantee-icon">🔒</span>
+          <span class="fv-cta__guarantee-text">Sifat kafolati · Vaqtida yetkazish · Yangi gullar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT  (sections/sections-rest.html)
+       ========================================== -->
+  <section class="fv-contact" id="contact">
+    <div class="fv-contact__info reveal-left">
+      <span class="fv-contact__label">✦ Bog'laning</span>
+      <h2 class="fv-contact__title">Biz bilan<br><em>aloqada bo'ling</em></h2>
+      <div class="fv-contact__items">
+        <div class="fv-contact__item"><div class="fv-contact__icon">📞</div><div><div class="fv-contact__item-label">Telefon</div><div class="fv-contact__item-value"><a href="tel:+998901234567">+998 90 123-45-67</a></div></div></div>
+        <div class="fv-contact__item"><div class="fv-contact__icon">📍</div><div><div class="fv-contact__item-label">Manzil</div><div class="fv-contact__item-value">Toshkent, Chilonzor tumani</div></div></div>
+        <div class="fv-contact__item"><div class="fv-contact__icon">🕐</div><div><div class="fv-contact__item-label">Ish vaqti</div><div class="fv-contact__item-value">09:00 – 21:00, Har kuni</div></div></div>
+        <div class="fv-contact__item"><div class="fv-contact__icon">✉️</div><div><div class="fv-contact__item-label">Email</div><div class="fv-contact__item-value"><a href="mailto:info@floravita.uz">info@floravita.uz</a></div></div></div>
+      </div>
+    </div>
+    <div class="fv-contact__map reveal-right">
+      <svg viewBox="0 0 500 420" width="90%" height="90%" xmlns="http://www.w3.org/2000/svg" opacity="0.35" aria-hidden="true">
+        <line x1="0" y1="70"  x2="500" y2="70"  stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="0" y1="140" x2="500" y2="140" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="0" y1="210" x2="500" y2="210" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="0" y1="280" x2="500" y2="280" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="0" y1="350" x2="500" y2="350" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="83"  y1="0" x2="83"  y2="420" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="166" y1="0" x2="166" y2="420" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="249" y1="0" x2="249" y2="420" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="332" y1="0" x2="332" y2="420" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <line x1="415" y1="0" x2="415" y2="420" stroke="#c87d6e" stroke-width="0.5" stroke-dasharray="4,8"/>
+        <rect x="80"  y="80"  width="140" height="6" rx="2" fill="#c87d6e" opacity="0.4"/>
+        <rect x="280" y="80"  width="120" height="6" rx="2" fill="#c87d6e" opacity="0.3"/>
+        <rect x="60"  y="200" width="180" height="6" rx="2" fill="#c87d6e" opacity="0.35"/>
+        <rect x="300" y="200" width="140" height="6" rx="2" fill="#c87d6e" opacity="0.25"/>
+        <rect x="120" y="320" width="160" height="6" rx="2" fill="#c87d6e" opacity="0.3"/>
+        <rect x="140" y="80"  width="6" height="280" rx="2" fill="#c87d6e" opacity="0.25"/>
+        <rect x="310" y="80"  width="6" height="240" rx="2" fill="#c87d6e" opacity="0.2"/>
+        <circle cx="250" cy="210" r="24" fill="#c87d6e" opacity="0.2"/>
+        <circle cx="250" cy="210" r="14" fill="#c87d6e" opacity="0.5"/>
+        <circle cx="250" cy="210" r="6"  fill="#9b4f42"/>
+        <line   x1="250" y1="224" x2="250" y2="248" stroke="#9b4f42" stroke-width="2.5"/>
+      </svg>
+      <div class="fv-contact__map-label">Chilonzor, Toshkent</div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER  (sections/sections-rest.html)
+       ========================================== -->
+  <footer class="fv-footer">
+    <div class="fv-footer__grid">
+      <div class="fv-footer__brand">
+        <a href="#home" class="fv-footer__logo">Flora<em>Vita</em></a>
+        <p class="fv-footer__tagline">Toshkentning eng nozik gul do'koni. Har bir guldasta — sizning hissiyotlaringiz ifodasi. Sevgi bilan yasalgan, sevgi bilan yetkaziladi.</p>
+        <div class="fv-footer__social">
+          <a href="#" class="fv-footer__social-link" aria-label="Telegram">Tg</a>
+          <a href="#" class="fv-footer__social-link" aria-label="Instagram">Ig</a>
+          <a href="#" class="fv-footer__social-link" aria-label="Facebook">Fb</a>
+          <a href="#" class="fv-footer__social-link" aria-label="YouTube">Yt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fv-footer__col-title">Sahifalar</h4>
+        <div class="fv-footer__links">
+          <a href="#home"       class="fv-footer__link">Bosh sahifa</a>
+          <a href="#collection" class="fv-footer__link">Kolleksiya</a>
+          <a href="#process"    class="fv-footer__link">Xizmatlar</a>
+          <a href="#contact"    class="fv-footer__link">Aloqa</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fv-footer__col-title">Xizmatlar</h4>
+        <div class="fv-footer__links">
+          <a href="#contact" class="fv-footer__link">Yetkazib berish</a>
+          <a href="#contact" class="fv-footer__link">Abonement</a>
+          <a href="#contact" class="fv-footer__link">To'ylar</a>
+          <a href="#contact" class="fv-footer__link">Korporativ</a>
+          <a href="#contact" class="fv-footer__link">Dekoratsiya</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fv-footer__col-title">Aloqa</h4>
+        <div class="fv-footer__links">
+          <a href="tel:+998901234567"       class="fv-footer__link">+998 90 123-45-67</a>
+          <a href="mailto:info@floravita.uz" class="fv-footer__link">info@floravita.uz</a>
+          <a href="#"                        class="fv-footer__link">Toshkent, Chilonzor</a>
+          <a href="#"                        class="fv-footer__link">09:00 – 21:00</a>
+        </div>
+      </div>
+    </div>
+    <div class="fv-footer__bottom">
+      <p class="fv-footer__copy">© 2025 FloraVita. Barcha huquqlar himoyalangan.</p>
+      <div class="fv-footer__bottom-links">
+        <a href="#" class="fv-footer__bottom-link">Maxfiylik siyosati</a>
+        <a href="#" class="fv-footer__bottom-link">Foydalanish shartlari</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--
+    =============================================
+    FloraVita JS Architecture
+    js/cursor.js      — custom cursor + nav scroll
+    js/hero.js        — petals, parallax, counters
+    js/animations.js  — scroll reveal, slider, gallery, tilt
+    =============================================
+  -->
+  <script src="js/cursor.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
