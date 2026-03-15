@@ -1,0 +1,155 @@
+<!-- ============================================
+     FloraVita — sections/hero.html
+     Hero section with animated flower SVG
+     ============================================ -->
+
+<section class="fv-hero" id="home">
+
+  <!-- LEFT: Text content -->
+  <div class="fv-hero__left">
+
+    <p class="fv-hero__eyebrow">Toshkentning eng nozik gul do'koni</p>
+
+    <h1 class="fv-hero__title">
+      Tabiat
+      <em>go'zalligi</em>
+    </h1>
+
+    <p class="fv-hero__desc">
+      Har bir guldasta — bu sizning his-tuyg'ularingizning ifodasi.
+      Biz eng yangi, eng chiroyli gullarni sizning sevgiliyingiz
+      uchun muhabbat bilan to'playmiz.
+    </p>
+
+    <div class="fv-hero__actions">
+      <a href="#collection" class="btn-primary"><span>Katalogni ko'rish</span></a>
+      <a href="#process" class="btn-arrow">Qanday ishlaydi</a>
+    </div>
+
+    <!-- Stats -->
+    <div class="fv-hero__stats">
+      <div class="fv-hero__stat">
+        <div class="fv-hero__stat-num" data-target="500" data-suffix="+">500+</div>
+        <div class="fv-hero__stat-label">Xursand mijoz</div>
+      </div>
+      <div class="fv-hero__stat">
+        <div class="fv-hero__stat-num" data-target="120" data-suffix="+">120+</div>
+        <div class="fv-hero__stat-label">Gul turi</div>
+      </div>
+      <div class="fv-hero__stat">
+        <div class="fv-hero__stat-num" data-target="2" data-suffix="h">2h</div>
+        <div class="fv-hero__stat-label">Yetkazib berish</div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="fv-hero__scroll">
+      <span class="fv-hero__scroll-label">Pastga</span>
+      <div class="fv-hero__scroll-bar"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Decorative flower visual -->
+  <div class="fv-hero__right">
+    <div class="fv-hero__canvas">
+
+      <!-- Ambient glow -->
+      <div class="fv-hero__glow"></div>
+
+      <!-- Animated flower SVG -->
+      <div class="fv-hero__flower-wrap">
+        <svg class="fv-hero__flower" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="petalGrad1" cx="50%" cy="30%" r="70%">
+              <stop offset="0%"   stop-color="#faeae0"/>
+              <stop offset="100%" stop-color="#c87d6e"/>
+            </radialGradient>
+            <radialGradient id="petalGrad2" cx="50%" cy="30%" r="70%">
+              <stop offset="0%"   stop-color="#f2d5c4"/>
+              <stop offset="100%" stop-color="#9b4f42"/>
+            </radialGradient>
+            <radialGradient id="centerGrad" cx="50%" cy="40%" r="70%">
+              <stop offset="0%"   stop-color="#d4927e"/>
+              <stop offset="60%"  stop-color="#9b4f42"/>
+              <stop offset="100%" stop-color="#7a3830"/>
+            </radialGradient>
+            <filter id="petalShadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(155,79,66,0.2)"/>
+            </filter>
+          </defs>
+
+          <g transform="translate(260,260)" filter="url(#petalShadow)">
+            <!-- Outermost petal ring (8 petals) -->
+            <g opacity="0.72">
+              <ellipse rx="38" ry="120" fill="url(#petalGrad1)" transform="rotate(0)   translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad2)" transform="rotate(45)  translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad1)" transform="rotate(90)  translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad2)" transform="rotate(135) translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad1)" transform="rotate(180) translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad2)" transform="rotate(225) translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad1)" transform="rotate(270) translate(0,-78)"/>
+              <ellipse rx="38" ry="120" fill="url(#petalGrad2)" transform="rotate(315) translate(0,-78)"/>
+            </g>
+            <!-- Middle petal ring (8 petals, rotated 22.5°) -->
+            <g opacity="0.85">
+              <ellipse rx="25" ry="88" fill="url(#petalGrad2)" transform="rotate(22.5)  translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad1)" transform="rotate(67.5)  translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad2)" transform="rotate(112.5) translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad1)" transform="rotate(157.5) translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad2)" transform="rotate(202.5) translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad1)" transform="rotate(247.5) translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad2)" transform="rotate(292.5) translate(0,-55)"/>
+              <ellipse rx="25" ry="88" fill="url(#petalGrad1)" transform="rotate(337.5) translate(0,-55)"/>
+            </g>
+            <!-- Inner petal ring (6 petals) -->
+            <g opacity="0.9">
+              <ellipse rx="18" ry="58" fill="url(#petalGrad1)" transform="rotate(0)   translate(0,-36)"/>
+              <ellipse rx="18" ry="58" fill="url(#petalGrad2)" transform="rotate(60)  translate(0,-36)"/>
+              <ellipse rx="18" ry="58" fill="url(#petalGrad1)" transform="rotate(120) translate(0,-36)"/>
+              <ellipse rx="18" ry="58" fill="url(#petalGrad2)" transform="rotate(180) translate(0,-36)"/>
+              <ellipse rx="18" ry="58" fill="url(#petalGrad1)" transform="rotate(240) translate(0,-36)"/>
+              <ellipse rx="18" ry="58" fill="url(#petalGrad2)" transform="rotate(300) translate(0,-36)"/>
+            </g>
+            <!-- Center -->
+            <circle r="62" fill="url(#centerGrad)"/>
+            <circle r="46" fill="#b85e4e" opacity="0.7"/>
+            <circle r="32" fill="#c87d6e" class="fv-hero-center-pulse"/>
+            <circle r="18" fill="#e8b4a0" class="fv-hero-center-pulse" opacity="0.85"/>
+            <circle r="8"  fill="#faeae0" opacity="0.9"/>
+            <!-- Center texture dots -->
+            <circle r="3" cx="12" cy="-8"  fill="#9b4f42" opacity="0.4"/>
+            <circle r="2" cx="-10" cy="10"  fill="#9b4f42" opacity="0.35"/>
+            <circle r="2.5" cx="6"  cy="14" fill="#9b4f42" opacity="0.3"/>
+            <circle r="2"  cx="-6" cy="-14" fill="#9b4f42" opacity="0.35"/>
+          </g>
+
+          <!-- Leaves -->
+          <g opacity="0.75">
+            <ellipse cx="128" cy="400" rx="18" ry="58" fill="#7d9b7a" transform="rotate(-35 128 400)"/>
+            <ellipse cx="392" cy="400" rx="18" ry="58" fill="#4a6647" transform="rotate(35  392 400)"/>
+            <ellipse cx="94"  cy="260" rx="14" ry="46" fill="#7d9b7a" transform="rotate(-72 94  260)"/>
+            <ellipse cx="426" cy="260" rx="14" ry="46" fill="#4a6647" transform="rotate(72  426 260)"/>
+            <ellipse cx="160" cy="440" rx="12" ry="38" fill="#9db89a" opacity="0.6" transform="rotate(-20 160 440)"/>
+          </g>
+
+          <!-- Stem hint -->
+          <line x1="260" y1="380" x2="260" y2="520" stroke="#4a6647" stroke-width="4" opacity="0.3"/>
+        </svg>
+      </div>
+
+      <!-- Floating petals spawned by hero.js -->
+      <div class="fv-hero__petals"></div>
+    </div>
+
+    <!-- Floating badge -->
+    <div class="fv-hero__badge">
+      <div class="fv-hero__badge-ring"></div>
+      <div class="fv-hero__badge-ring--dashed"></div>
+      <div class="fv-hero__badge-body">
+        <span class="fv-hero__badge-num">5★</span>
+        <span class="fv-hero__badge-text">Sifat kafolati</span>
+      </div>
+    </div>
+  </div>
+
+</section>

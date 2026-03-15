@@ -1,0 +1,160 @@
+/* ============================================
+   FloraVita — Cursor Styles
+   ============================================ */
+.fv-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background: var(--rose);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  transition: width 0.3s var(--ease-smooth),
+              height 0.3s var(--ease-smooth),
+              background 0.3s;
+  will-change: left, top;
+}
+.fv-cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--rose);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  transform: translate(-50%, -50%);
+  opacity: 0.45;
+  transition: width 0.35s var(--ease-smooth),
+              height 0.35s var(--ease-smooth),
+              border-color 0.3s;
+  will-change: left, top;
+}
+
+/* Hover state for interactive elements */
+body.cursor-hover .fv-cursor {
+  width: 20px; height: 20px;
+  background: var(--deep-rose);
+}
+body.cursor-hover .fv-cursor-ring {
+  width: 64px; height: 64px;
+  border-color: var(--rose);
+}
+
+/* ============================================
+   FloraVita — Navigation Styles
+   ============================================ */
+.fv-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 60px;
+  transition: background 0.4s, box-shadow 0.4s, backdrop-filter 0.4s, padding 0.4s;
+  animation: fadeDown 0.9s var(--ease-smooth) 0.2s both;
+}
+
+.fv-nav.scrolled {
+  background: rgba(250, 246, 240, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 rgba(42,36,32,0.07);
+  padding: 16px 60px;
+}
+
+/* Logo */
+.fv-logo {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.fv-logo em {
+  font-style: italic;
+  color: var(--rose);
+}
+.fv-logo:hover { opacity: 0.75; }
+
+/* Links */
+.fv-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.fv-nav-link {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--charcoal);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--dur-fast);
+}
+.fv-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--rose);
+  transition: width var(--dur-mid) var(--ease-smooth);
+}
+.fv-nav-link:hover { color: var(--rose); }
+.fv-nav-link:hover::after { width: 100%; }
+
+/* Mobile hamburger */
+.fv-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: none;
+  padding: 4px;
+}
+.fv-nav-toggle span {
+  display: block;
+  width: 26px; height: 1.5px;
+  background: var(--charcoal);
+  transition: transform 0.35s, opacity 0.35s;
+}
+
+/* Mobile nav overlay */
+.fv-nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: calc(var(--z-nav) - 1);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.fv-nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.fv-nav-mobile .fv-nav-link {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .fv-nav { padding: 20px 24px; }
+  .fv-nav.scrolled { padding: 14px 24px; }
+  .fv-nav-links { display: none; }
+  .fv-nav-toggle { display: flex; }
+  .fv-nav-mobile { display: flex; }
+}

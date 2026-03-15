@@ -1,0 +1,253 @@
+/* ============================================
+   FloraVita — Hero Section Styles
+   ============================================ */
+.fv-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- LEFT COLUMN ---- */
+.fv-hero__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 150px 80px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.fv-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 400;
+  margin-bottom: 22px;
+  animation: fadeUp 0.9s var(--ease-smooth) 0.55s both;
+}
+.fv-hero__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 30px; height: 1px;
+  background: var(--sage);
+}
+
+.fv-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(68px, 7.5vw, 115px);
+  font-weight: 300;
+  line-height: 0.92;
+  color: var(--charcoal);
+  margin-bottom: 32px;
+  animation: fadeUp 0.9s var(--ease-smooth) 0.75s both;
+}
+.fv-hero__title em {
+  font-style: italic;
+  color: var(--rose);
+  display: block;
+  padding-left: 8px;
+}
+
+.fv-hero__desc {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.85;
+  color: #6b5f58;
+  max-width: 400px;
+  margin-bottom: 52px;
+  animation: fadeUp 0.9s var(--ease-smooth) 0.95s both;
+}
+
+.fv-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  animation: fadeUp 0.9s var(--ease-smooth) 1.15s both;
+}
+
+/* Scroll hint */
+.fv-hero__scroll {
+  position: absolute;
+  bottom: 44px; left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: fadeIn 1s var(--ease-smooth) 1.8s both;
+}
+.fv-hero__scroll-label {
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.45;
+  font-weight: 300;
+}
+.fv-hero__scroll-bar {
+  width: 1px; height: 64px;
+  background: linear-gradient(to bottom, var(--charcoal), transparent);
+  animation: scrollBarDrop 2.4s var(--ease-smooth) infinite;
+}
+
+/* Stats row */
+.fv-hero__stats {
+  display: flex;
+  gap: 44px;
+  margin-top: 56px;
+  animation: fadeUp 0.9s var(--ease-smooth) 1.35s both;
+}
+.fv-hero__stat-num {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.fv-hero__stat-label {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 400;
+}
+
+/* ---- RIGHT COLUMN ---- */
+.fv-hero__right {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blush-light) 0%, var(--cream) 100%);
+}
+
+.fv-hero__canvas {
+  position: absolute;
+  inset: 0;
+  animation: heroReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.1s both;
+}
+
+/* Background glow */
+.fv-hero__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(200,125,110,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse at 75% 20%, rgba(125,155,122,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(201,169,110,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Main flower */
+.fv-hero__flower-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fv-hero__flower {
+  width: 80%;
+  height: 80%;
+  will-change: transform;
+}
+
+/* Floating petals container */
+.fv-hero__petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.fv-petal {
+  position: absolute;
+  border-radius: 50% 0 50% 0;
+  animation: floatPetal linear infinite;
+}
+
+/* Badge */
+.fv-hero__badge {
+  position: absolute;
+  bottom: 50px; right: 50px;
+  width: 124px; height: 124px;
+  animation: fadeIn 1s var(--ease-smooth) 1.6s both;
+}
+.fv-hero__badge-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(200,125,110,0.4);
+  border-radius: 50%;
+  animation: badgeSpin 18s linear infinite;
+}
+.fv-hero__badge-ring--dashed {
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(200,125,110,0.25);
+  border-radius: 50%;
+  animation: badgeSpin 12s linear reverse infinite;
+}
+.fv-hero__badge-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fv-hero__badge-num {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.fv-hero__badge-text {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Pulse ring behind badge */
+.fv-hero__badge::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(200,125,110,0.2);
+  border-radius: 50%;
+  animation: pulseRing 3s var(--ease-smooth) infinite;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .fv-hero { grid-template-columns: 1fr; min-height: auto; }
+  .fv-hero__left {
+    padding: 130px 40px 60px;
+    order: 2;
+  }
+  .fv-hero__right {
+    order: 1;
+    height: 60vw;
+    min-height: 340px;
+  }
+  .fv-hero__scroll { display: none; }
+  .fv-hero__stats { gap: 28px; }
+}
+
+@media (max-width: 600px) {
+  .fv-hero__left { padding: 110px 24px 50px; }
+  .fv-hero__title { font-size: clamp(52px, 14vw, 80px); }
+  .fv-hero__actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .fv-hero__stats { gap: 20px; flex-wrap: wrap; }
+  .fv-hero__badge { width: 90px; height: 90px; bottom: 20px; right: 20px; }
+  .fv-hero__badge-num { font-size: 28px; }
+}
